@@ -11,7 +11,7 @@ Serial.println("Initiating Reading...");
 void loop() {
   // put your main code here, to run repeatedly:
  while (Serial.available()) {
-    delay(3);  //delay to allow buffer to fill
+    delay(3);  //wait 3mi s
     if (Serial.available() >0) {
       char c = Serial.read();  //gets one byte from serial buffer
       readString += c; //cat chars to readString
@@ -19,7 +19,7 @@ void loop() {
  }
    if (readString.length() > 0) {
    
-  Serial.print(intro+readString); //see what was received
+  Serial.print(readString); //see what was received
   Serial.println();
 
   readString = "";
